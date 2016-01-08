@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MyHtml.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var goods = new Array();
+			var users = new Array();
+			
+			var user1 = {
+				"name" : "utianle",
+				"password" : "123"
+			};
+			var user2 = {
+				"name" : "utianle2",
+				"password" : "123"
+			};
+			
+			var data1 = {
+				"id" : "gtest",
+				"name" : "tianle",
+				"guige" : "123"
+			};
+			var data2 = {
+				"id" : "gququ",
+				"name" : "tianle2",
+				"guige" : "123"
+			};
+			
+			goods.push(data1);
+			goods.push(data2);
+			
+			users.push(user1);
+			users.push(user2);
+
+			$.ajax({
+				type : "POST",
+				url : "../example/saveGoods.do",
+				dataType : "json",
+				contentType : "application/json",
+				data : JSON.stringify(goods),
+				success : function(data) {
+					 
+				}
+			});
+			
+			var userGoodsVO = {};
+			userGoodsVO.users = users;
+			userGoodsVO.goodses = goods;
+			
+
+			$.ajax({
+				type : "POST",
+				url : "../example/UserGoodsVO.do",
+				dataType : "json",
+				contentType : "application/json",
+				data : JSON.stringify(userGoodsVO),
+				success : function(data) {
+
+				}
+			}); 
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body{padding:0px; overflow:hidden;}
+.tal{text-align: left;}
+.tar{text-align:right;}
+.w160{width:160px;}
+.w180{width:180px;}
+#menu1,.l-menu-shadow{top:30px; left:50px;}
+#menu1{width:200px;}
+#addUser,#modifyUser{margin:0 100px;width:300px;height:250px;}
+#addUserForm tr,#modifyUser tr{height: 40px;}
+#addUser .addUserSubmit,#modifyUser .modifyUserSubmit{margin:20px 20px 0 100px;}
